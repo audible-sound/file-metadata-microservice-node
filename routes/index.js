@@ -3,6 +3,7 @@ const multer = require("multer");
 const ApiController = require("../controllers/api");
 const router = express.Router();
 const upload = multer();
+router.get("/", ApiController.home);
 router.post("/api/fileanalyse", upload.single("upfile") ,ApiController.postFile);
 
 module.exports = router;
